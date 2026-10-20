@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Rate Limiter Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>API Rate Limiter</h1>
+
+    <p class="description">
+        A custom API Gateway built using Spring Boot implementing API Key Authentication,
+        Fixed Window Rate Limiting, Request Logging, Response Time Tracking and
+        Real-Time Metrics Monitoring.
+    </p>
+
+    <button id="sendBtn">
+        Send Request
+    </button>
+
+
+
+    <div class="metrics-container">
+
+        <div class="metric-card">
+            <span class="card-title">📊 Total Requests</span>
+            <h2 id="totalRequests">0</h2>
+            <div class="wave-chart"></div>
+        </div>
+
+        <div class="metric-card">
+            <span class="card-title">🚫 Blocked Requests</span>
+            <h2 id="blockedRequests">0</h2>
+            <div class="wave-chart warning-wave"></div>
+        </div>
+
+        <div class="metric-card">
+            <span class="card-title">⚡ Avg Response Time</span>
+            <h2 id="avgResponseTime">0 ms</h2>
+            <div class="clock-icon">⏱</div>
+        </div>
+
+        <div class="metric-card">
+            <span class="card-title">🔒 Rate Limit</span>
+            <h2 id="rateLimit">0/min</h2>
+            <div class="rate-icon">⛭</div>
+        </div>
+
+        <div class="metric-card">
+            <span class="card-title">❤️ Gateway Status</span>
+            <h2 id="status">
+                <span class="status-dot"></span>
+                Healthy
+            </h2>
+        </div>
+
+    </div>
+
+</div>
+<div id="toast" class="toast">
+    <span id="toastMessage"></span>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
